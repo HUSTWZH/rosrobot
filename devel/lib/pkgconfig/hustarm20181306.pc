@@ -1,0 +1,8 @@
+prefix=/media/dubing/DATA/test/devel
+
+Name: hustarm20181306
+Description: Description of hustarm20181306
+Version: 1.0.0
+Cflags: 
+Libs: -L/media/dubing/DATA/test/devel/lib 
+Requires: 

@@ -1,0 +1,2 @@
+begin:hustarm20180503
+-DCATKIN_DEVEL_PREFIX=/media/dubing/DATA/test/devel -DCMAKE_INSTALL_PREFIX=/media/dubing/DATA/test/install -G Unix Makefiles

@@ -1,0 +1,1049 @@
+<robot
+  name="armdouble">
+  <link name="world"/>
+  <joint name="fixed" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/> 
+  </joint>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-1.30825935592439E-18 -2.47843974540625E-05 0.390304716761227"
+        rpy="0 0 0" />
+      <mass
+        value="12.9490065317485" />
+      <inertia
+        ixx="0.650041483576152"
+        ixy="1.53302010296268E-18"
+        ixz="3.97589274936842E-18"
+        iyy="0.655333472882223"
+        iyz="8.33448706115431E-05"
+        izz="0.0397437102111683" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armdouble/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armdouble/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="left_link1">
+    <inertial>
+      <origin
+        xyz="1.07941533489253E-09 -0.00421863823711172 0.000844539620302481"
+        rpy="0 0 0" />
+      <mass
+        value="0.254125966188323" />
+      <inertia
+        ixx="0.000198332098202314"
+        ixy="-4.23443733825772E-12"
+        ixz="2.49972430372105E-11"
+        iyy="0.000180528370127098"
+        iyz="-9.05401811091255E-07"
+        izz="0.000142050138600536" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armdouble/meshes/left_link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.113725490196078 0.313725490196078 0.635294117647059 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armdouble/meshes/left_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_joint1"
+    type="continuous">
+    <origin
+      xyz="0.184 0 0.675"
+      rpy="-1.5708 0.8195 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_link1" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="10000"
+     velocity="10"/>
+  </joint>
+  <link
+    name="left_link2">
+    <inertial>
+      <origin
+        xyz="1.76481834701647E-09 -0.00421857706570139 0.00084454023607361"
+        rpy="0 0 0" />
+      <mass
+        value="0.254125677990374" />
+      <inertia
+        ixx="0.000198331675931475"
+        ixy="5.93428759048169E-12"
+        ixz="5.5308855564781E-12"
+        iyy="0.000180528501061914"
+        iyz="-9.05388593237672E-07"
+        izz="0.000142050134140347" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armdouble/meshes/left_link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.113725490196078 0.313725490196078 0.635294117647059 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armdouble/meshes/left_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_joint2"
+    type="continuous">
+    <origin
+      xyz="0 -0.08 0"
+      rpy="1.5708 -1.5495 -5.2864E-15" />
+    <parent
+      link="left_link1" />
+    <child
+      link="left_link2" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+     velocity="10"/>
+  </joint>
+  <link
+    name="left_link3">
+    <inertial>
+      <origin
+        xyz="9.55937768826118E-05 -0.002016109749721 0.130480214214543"
+        rpy="0 0 0" />
+      <mass
+        value="1.44391963248352" />
+      <inertia
+        ixx="0.0125306224888963"
+        ixy="-2.80847581554033E-05"
+        ixz="-1.92557415031902E-05"
+        iyy="0.0124326356673661"
+        iyz="-0.000385834972851447"
+        izz="0.00112527959793678" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armdouble/meshes/left_link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.113725490196078 0.313725490196078 0.635294117647059 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armdouble/meshes/left_link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_joint3"
+    type="continuous">
+    <origin
+      xyz="0 -0.08 0"
+      rpy="-1.5708 -0.32361 -3.1416" />
+    <parent
+      link="left_link2" />
+    <child
+      link="left_link3" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+     velocity="10"/>
+  </joint>
+  <link
+    name="left_link4">
+    <inertial>
+      <origin
+        xyz="2.79610266051833E-08 -0.00355662507859367 -0.00123041304413335"
+        rpy="0 0 0" />
+      <mass
+        value="0.151334113576265" />
+      <inertia
+        ixx="8.52595610907431E-05"
+        ixy="4.19449361193231E-11"
+        ixz="1.55356059268442E-12"
+        iyy="7.76115530728594E-05"
+        iyz="6.62256304869109E-07"
+        izz="5.91424715957144E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armdouble/meshes/left_link4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.2 0.537254901960784 0.792156862745098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armdouble/meshes/left_link4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_joint4"
+    type="continuous">
+    <origin
+      xyz="-0.048233 -0.057434 0.27"
+      rpy="1.2768E-15 -0.010773 2.443" />
+    <parent
+      link="left_link3" />
+    <child
+      link="left_link4" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+     velocity="10"/>
+  </joint>
+  <link
+    name="left_link5">
+    <inertial>
+      <origin
+        xyz="8.93314311412041E-11 -0.178072315297836 -0.000118146362791505"
+        rpy="0 0 0" />
+      <mass
+        value="0.695687990955132" />
+      <inertia
+        ixx="0.00589350948115548"
+        ixy="-1.0599535546759E-11"
+        ixz="5.7041665228047E-13"
+        iyy="0.000360945450853938"
+        iyz="1.46362988160341E-05"
+        izz="0.0058818682341257" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armdouble/meshes/left_link5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armdouble/meshes/left_link5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_joint5"
+    type="continuous">
+    <origin
+      xyz="0 0 0.35"
+      rpy="1.5708 -2.6368E-16 -2.0099" />
+    <parent
+      link="left_link4" />
+    <child
+      link="left_link5" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+     velocity="10"/>
+  </joint>
+  <link
+    name="left_link6">
+    <inertial>
+      <origin
+        xyz="-6.59787391388278E-10 -0.060977377780739 -0.00332710438216816"
+        rpy="0 0 0" />
+      <mass
+        value="0.0840954351235641" />
+      <inertia
+        ixx="3.35334184632453E-05"
+        ixy="-5.17018097357904E-13"
+        ixz="-2.60360251467154E-13"
+        iyy="2.19627942424673E-05"
+        iyz="2.73464678692907E-07"
+        izz="2.99782491575417E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armdouble/meshes/left_link6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.572549019607843 0.803921568627451 0.913725490196078 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armdouble/meshes/left_link6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_joint6"
+    type="continuous">
+    <origin
+      xyz="0 0 0.06"
+      rpy="1.5708 1.1102E-16 -3.1416" />
+    <parent
+      link="left_link5" />
+    <child
+      link="left_link6" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+     velocity="10"/>
+  </joint>
+  <link
+    name="left_link7">
+    <inertial>
+      <origin
+        xyz="-0.00238069059477031 7.67189756167852E-10 0.0937656479758585"
+        rpy="0 0 0" />
+      <mass
+        value="0.515437278825869" />
+      <inertia
+        ixx="0.00144071148561393"
+        ixy="-9.84455041357774E-11"
+        ixz="1.28663522693283E-05"
+        iyy="0.00165389003057971"
+        iyz="-1.89345840845593E-11"
+        izz="0.000352650786530423" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armdouble/meshes/left_link7.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.964705882352941 0.482352941176471 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armdouble/meshes/left_link7.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_joint7"
+    type="continuous">
+    <origin
+      xyz="0 0 0.03"
+      rpy="3.8858E-16 -2.2204E-16 -3.1416" />
+    <parent
+      link="left_link6" />
+    <child
+      link="left_link7" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+     velocity="10"/>
+  </joint>
+  <link
+    name="right_link1">
+    <inertial>
+      <origin
+        xyz="8.13915529418452E-09 -0.00421863569936587 0.0008445396293075"
+        rpy="0 0 0" />
+      <mass
+        value="0.254125954556314" />
+      <inertia
+        ixx="0.000198332079001037"
+        ixy="1.78425867627279E-11"
+        ixz="2.5746319183967E-11"
+        iyy="0.000180528373097958"
+        iyz="-9.05401254386239E-07"
+        izz="0.00014205013378744" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armdouble/meshes/right_link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.113725490196078 0.313725490196078 0.635294117647059 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armdouble/meshes/right_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_joint1"
+    type="continuous">
+    <origin
+      xyz="-0.184 0 0.675"
+      rpy="-1.5708 -0.6157 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_link1" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+     velocity="10"/>
+  </joint>
+  <link
+    name="right_link2">
+    <inertial>
+      <origin
+        xyz="9.09519395908553E-09 -0.00421858096765254 0.00084454192245742"
+        rpy="0 0 0" />
+      <mass
+        value="0.254125697144451" />
+      <inertia
+        ixx="0.000198331699219475"
+        ixy="2.67526489751023E-11"
+        ixz="8.21765266308138E-12"
+        iyy="0.000180528489194234"
+        iyz="-9.05389618477969E-07"
+        izz="0.000142050127643342" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armdouble/meshes/right_link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.113725490196078 0.313725490196078 0.635294117647059 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armdouble/meshes/right_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_joint2"
+    type="continuous">
+    <origin
+      xyz="0 -0.08 0"
+      rpy="-1.5708 1.4879 3.1416" />
+    <parent
+      link="right_link1" />
+    <child
+      link="right_link2" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+     velocity="10"/>
+  </joint>
+  <link
+    name="right_link3">
+    <inertial>
+      <origin
+        xyz="8.36137888793331E-06 -0.00227833630004282 0.13224017765766"
+        rpy="0 0 0" />
+      <mass
+        value="1.44391962665325" />
+      <inertia
+        ixx="0.0132607805607266"
+        ixy="3.14547025350733E-06"
+        ixz="-1.78633685494402E-06"
+        iyy="0.0131180866080102"
+        iyz="-0.000336655790884567"
+        izz="0.00112366670747596" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armdouble/meshes/right_link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.113725490196078 0.313725490196078 0.635294117647059 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armdouble/meshes/right_link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_joint3"
+    type="continuous">
+    <origin
+      xyz="0 -0.08 0"
+      rpy="1.5708 -0.52464 1.9883E-15" />
+    <parent
+      link="right_link2" />
+    <child
+      link="right_link3" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+     velocity="10"/>
+  </joint>
+  <link
+    name="right_link4">
+    <inertial>
+      <origin
+        xyz="-2.95433769947895E-08 -0.00355661151027398 -0.00123041346185349"
+        rpy="0 0 0" />
+      <mass
+        value="0.15133406560684" />
+      <inertia
+        ixx="8.52595173579592E-05"
+        ixy="-4.00561334022202E-11"
+        ixz="1.02985025597689E-11"
+        iyy="7.76115618142258E-05"
+        iyz="6.62253549355129E-07"
+        izz="5.91424694112566E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armdouble/meshes/right_link4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.2 0.537254901960784 0.792156862745098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armdouble/meshes/right_link4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_joint4"
+    type="continuous">
+    <origin
+      xyz="-0.0042216 0.074881 0.28"
+      rpy="-2.8869E-15 0.014423 0.056317" />
+    <parent
+      link="right_link3" />
+    <child
+      link="right_link4" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+     velocity="10"/>
+  </joint>
+  <link
+    name="right_link5">
+    <inertial>
+      <origin
+        xyz="1.8523904632417E-10 -0.178072313456951 -0.000118146531250307"
+        rpy="0 0 0" />
+      <mass
+        value="0.695688000018042" />
+      <inertia
+        ixx="0.00589350965654226"
+        ixy="-2.1895961115065E-11"
+        ixz="8.56147075976865E-13"
+        iyy="0.000360945449051886"
+        iyz="1.46363198102075E-05"
+        izz="0.00588186840370165" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armdouble/meshes/right_link5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armdouble/meshes/right_link5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_joint5"
+    type="continuous">
+    <origin
+      xyz="0 0 0.35"
+      rpy="1.5708 7.0777E-16 2.2424" />
+    <parent
+      link="right_link4" />
+    <child
+      link="right_link5" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+     velocity="10"/>
+  </joint>
+  <link
+    name="right_link6">
+    <inertial>
+      <origin
+        xyz="1.72353870064867E-08 -0.00332711026229804 -0.000977377267251167"
+        rpy="0 0 0" />
+      <mass
+        value="0.0840954505566071" />
+      <inertia
+        ixx="3.35334258703234E-05"
+        ixy="9.31389665997977E-12"
+        ixz="-4.55906246118304E-13"
+        iyy="2.99782451158901E-05"
+        iyz="2.7346510325998E-07"
+        izz="2.19627906947379E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armdouble/meshes/right_link6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.572549019607843 0.803921568627451 0.913725490196078 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armdouble/meshes/right_link6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_joint6"
+    type="continuous">
+    <origin
+      xyz="0 0 0.06"
+      rpy="1.5708 -6.9389E-16 -3.0037" />
+    <parent
+      link="right_link5" />
+    <child
+      link="right_link6" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+     velocity="10"/>
+  </joint>
+  <link
+    name="right_link7">
+    <inertial>
+      <origin
+        xyz="-0.00238068983457324 -4.99865926428811E-10 0.0937656479507275"
+        rpy="0 0 0" />
+      <mass
+        value="0.515437278134674" />
+      <inertia
+        ixx="0.00144071148068865"
+        ixy="-9.67341236477706E-11"
+        ixz="1.2866334374982E-05"
+        iyy="0.0016538900268342"
+        iyz="-5.06397286842257E-12"
+        izz="0.000352650786034832" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armdouble/meshes/right_link7.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.964705882352941 0.482352941176471 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armdouble/meshes/right_link7.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_joint7"
+    type="continuous">
+    <origin
+      xyz="0 0 0.03"
+      rpy="9.992E-16 -2.7756E-17 0.29205" />
+    <parent
+      link="right_link6" />
+    <child
+      link="right_link7" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+     velocity="10"/>
+  </joint>
+  <transmission name="left_tran1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_joint1">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="left_motor1">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="left_tran2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_joint2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="left_motor2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="left_tran3">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_joint3">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="left_motor3">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="left_tran4">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_joint4">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="left_motor4">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="left_tran5">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_joint5">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="left_motor5">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="left_tran6">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_joint6">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="left_motor6">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="left_tran7">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_joint7">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="left_motor7">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="right_tran1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_joint1">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="right_motor1">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="right_tran2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_joint2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="right_motor2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="right_tran3">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_joint3">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="right_motor3">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="right_tran4">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_joint4">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="right_motor4">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="right_tran5">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_joint5">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="right_motor5">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="right_tran6">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_joint6">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="right_motor6">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="right_tran7">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_joint7">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="right_motor7">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <gazebo>
+    <plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control">
+      <robotNamespace>/armdouble</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
+  </gazebo>
+    <!-- Link1 -->
+  <gazebo reference="base_link">
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+  <!-- Link2 -->
+  <gazebo reference="left_link1">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/white</material>
+  </gazebo>
+  <gazebo reference="left_link2">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/white</material>
+  </gazebo>
+    <gazebo reference="left_link3">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/white</material>
+  </gazebo>
+    <gazebo reference="left_link4">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/white</material>
+  </gazebo>
+    <gazebo reference="left_link5">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/white</material>
+  </gazebo>
+    <gazebo reference="left_link6">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/white</material>
+  </gazebo>
+    <gazebo reference="left_link7">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/white</material>
+  </gazebo>
+
+</robot>

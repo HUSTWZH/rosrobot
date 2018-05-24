@@ -1,0 +1,8 @@
+prefix=/media/dubing/DATA/test/devel
+
+Name: hustarm1611
+Description: Description of hustarm1611
+Version: 1.0.0
+Cflags: 
+Libs: -L/media/dubing/DATA/test/devel/lib 
+Requires: 

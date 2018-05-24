@@ -1,0 +1,20 @@
+<launch>
+
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <rosparam file="$(find solidsinglearm)/config/armdouble_gazebo_joint_position.yaml" command="load" />
+
+  <!-- Load the controllers -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner"
+        respawn="false" output="screen" ns="/solidsinglearm"
+        args="joint_state_controller left_group ">
+       <param name="/use_smallest_joint_limits" value="False"/>
+   </node>
+
+  <!-- convert joint states to TF transforms for rviz, etc -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+	respawn="false" output="screen">
+    <remap from="/joint_states" to="/solidsinglearm/joint_states" />
+  </node>
+
+</launch>
+ 

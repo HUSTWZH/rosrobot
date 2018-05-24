@@ -1,0 +1,8 @@
+prefix=/media/dubing/DATA/test/install
+
+Name: begin
+Description: Description of begin
+Version: 0.0.0
+Cflags: -I/media/dubing/DATA/test/install/include
+Libs: -L/media/dubing/DATA/test/install/lib 
+Requires: message_runtime roscpp rospy std_msgs

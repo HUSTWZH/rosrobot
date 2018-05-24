@@ -1,0 +1,449 @@
+<robot
+  name="hustarm20180503">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-9.15781549147076E-19 -2.4784397454063E-05 0.390304716761227"
+        rpy="0 0 0" />
+      <mass
+        value="12.9490065317485" />
+      <inertia
+        ixx="0.650041483576152"
+        ixy="1.61177408696841E-18"
+        ixz="2.35960845093074E-18"
+        iyy="0.655333472882223"
+        iyz="8.33448706115425E-05"
+        izz="0.0397437102111683" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hustarm20180503/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hustarm20180503/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link1">
+    <inertial>
+      <origin
+        xyz="1.07941533489253E-09 -0.0042186382371116 0.000844539620302481"
+        rpy="0 0 0" />
+      <mass
+        value="0.254125966188324" />
+      <inertia
+        ixx="0.000198332098202315"
+        ixy="-4.23443722306124E-12"
+        ixz="2.49972430489484E-11"
+        iyy="0.000180528370127099"
+        iyz="-9.05401811091401E-07"
+        izz="0.000142050138600536" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hustarm20180503/meshes/link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.113725490196078 0.313725490196078 0.635294117647059 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hustarm20180503/meshes/link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint1"
+    type="revolute">
+    <origin
+      xyz="0.184 0 0.675"
+      rpy="-1.5708 0.8195 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="link1" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="link2">
+    <inertial>
+      <origin
+        xyz="1.76481837477205E-09 -0.0042185770657015 0.00084454023607361"
+        rpy="0 0 0" />
+      <mass
+        value="0.254125677990374" />
+      <inertia
+        ixx="0.000198331675931475"
+        ixy="5.93428774188883E-12"
+        ixz="5.53088566076903E-12"
+        iyy="0.000180528501061914"
+        iyz="-9.05388593237841E-07"
+        izz="0.000142050134140347" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hustarm20180503/meshes/link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.113725490196078 0.313725490196078 0.635294117647059 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hustarm20180503/meshes/link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint2"
+    type="revolute">
+    <origin
+      xyz="0 -0.08 0"
+      rpy="1.5708 -1.5495 0" />
+    <parent
+      link="link1" />
+    <child
+      link="link2" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="link3">
+    <inertial>
+      <origin
+        xyz="5.05571939868332E-09 -0.00198130150047987 0.130480201932413"
+        rpy="0 0 0" />
+      <mass
+        value="1.44391976773071" />
+      <inertia
+        ixx="0.0125541779815482"
+        ixy="9.44804336763111E-11"
+        ixz="1.11643782684401E-09"
+        iyy="0.0124092991175275"
+        iyz="-0.000392849299517415"
+        izz="0.00112549375533487" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hustarm20180503/meshes/link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.113725490196078 0.313725490196078 0.635294117647059 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hustarm20180503/meshes/link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint3"
+    type="revolute">
+    <origin
+      xyz="0 -0.08 0"
+      rpy="-1.5708 -1.0222 -3.1416" />
+    <parent
+      link="link2" />
+    <child
+      link="link3" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="link4">
+    <inertial>
+      <origin
+        xyz="2.79610266051833E-08 -0.00355662507859378 -0.00123041304413338"
+        rpy="0 0 0" />
+      <mass
+        value="0.151334113576265" />
+      <inertia
+        ixx="8.52595610907431E-05"
+        ixy="4.19449361260994E-11"
+        ixz="1.55356057574376E-12"
+        iyy="7.76115530728593E-05"
+        iyz="6.62256304869128E-07"
+        izz="5.91424715957144E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hustarm20180503/meshes/link4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.2 0.537254901960784 0.792156862745098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hustarm20180503/meshes/link4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint4"
+    type="revolute">
+    <origin
+      xyz="0 -0.075 0.27"
+      rpy="1.6654E-16 -0.010773 -3.1416" />
+    <parent
+      link="link3" />
+    <child
+      link="link4" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="link5">
+    <inertial>
+      <origin
+        xyz="8.93309870519943E-11 -0.178072315297836 -0.00011814636278995"
+        rpy="0 0 0" />
+      <mass
+        value="0.695687990955132" />
+      <inertia
+        ixx="0.00589350948115548"
+        ixy="-1.05995434428001E-11"
+        ixz="5.70416869120904E-13"
+        iyy="0.000360945450853939"
+        iyz="1.46362988160611E-05"
+        izz="0.0058818682341257" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hustarm20180503/meshes/link5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hustarm20180503/meshes/link5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint5"
+    type="revolute">
+    <origin
+      xyz="0 0 0.35"
+      rpy="1.5708 -2.6368E-16 -2.0099" />
+    <parent
+      link="link4" />
+    <child
+      link="link5" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="link6">
+    <inertial>
+      <origin
+        xyz="-5.8799947688648E-09 -0.00332710464731489 -0.000977378115177008"
+        rpy="0 0 0" />
+      <mass
+        value="0.0840954358481688" />
+      <inertia
+        ixx="3.35334189815293E-05"
+        ixy="-3.21929154675894E-12"
+        ixz="1.08187653584975E-12"
+        iyy="2.99782484340852E-05"
+        iyz="2.734648632243E-07"
+        izz="2.19627938257249E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hustarm20180503/meshes/link6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.572549019607843 0.803921568627451 0.913725490196078 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hustarm20180503/meshes/link6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint6"
+    type="revolute">
+    <origin
+      xyz="0 0 0.06"
+      rpy="1.5708 9.7145E-17 3.1416" />
+    <parent
+      link="link5" />
+    <child
+      link="link6" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="link7">
+    <inertial>
+      <origin
+        xyz="-0.00238069059477042 7.67189867190154E-10 0.0937656479758585"
+        rpy="0 0 0" />
+      <mass
+        value="0.515437278825869" />
+      <inertia
+        ixx="0.00144071148561393"
+        ixy="-9.84455039528182E-11"
+        ixz="1.28663522693287E-05"
+        iyy="0.00165389003057971"
+        iyz="-1.89345842878472E-11"
+        izz="0.000352650786530422" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hustarm20180503/meshes/link7.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.964705882352941 0.482352941176471 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hustarm20180503/meshes/link7.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint7"
+    type="revolute">
+    <origin
+      xyz="0 0 0.03"
+      rpy="-3.1086E-15 -5.8287E-16 -3.1416" />
+    <parent
+      link="link6" />
+    <child
+      link="link7" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>

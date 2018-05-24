@@ -1,0 +1,243 @@
+<robot
+  name="solidsinglearm">
+  <link name="world"/>
+  <joint name="fixed" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/> 
+  </joint>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0 0 0.5"
+        rpy="0 0 0" />
+      <mass
+        value="10.149" />
+      <inertia
+        ixx="0.87353"
+        ixy="2.2172E-18"
+        ixz="-0.0005131"
+        iyy="0.87197"
+        iyz="4.9676E-17"
+        izz="0.018415" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://solidsinglearm/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://solidsinglearm/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="l_link1">
+    <inertial>
+      <origin
+        xyz="0.02 0 0.025"
+        rpy="0 0 0" />
+      <mass
+        value="0.16858" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0.00013132"
+        iyz="0"
+        izz="0.00013132" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://solidsinglearm/meshes/l_link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://solidsinglearm/meshes/l_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_joint1"
+    type="continuous">
+    <origin
+      xyz="0 0.15 0.96758"
+      rpy="1.5708 0.78014 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="l_link1" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="l_link2">
+    <inertial>
+      <origin
+        xyz="0 -0. 0.025"
+        rpy="0 0 0" />
+      <mass
+        value="0.21858" />
+      <inertia
+        ixx="0.0002291"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0.00023198" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://solidsinglearm/meshes/l_link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://solidsinglearm/meshes/l_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_joint2"
+    type="continuous">
+    <origin
+      xyz="0.04 0.025 0.025"
+      rpy="1.5708 1.5689 -3.1416" />
+    <parent
+      link="l_link1" />
+    <child
+      link="l_link2" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="l_link3">
+    <inertial>
+      <origin
+        xyz="0 0 0.15622"
+        rpy="0 0 0" />
+      <mass
+        value="0.29589" />
+      <inertia
+        ixx="0.0024046"
+        ixy="0"
+        ixz="0"
+        iyy="0.0024046"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://solidsinglearm/meshes/l_link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://solidsinglearm/meshes/l_link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_joint3"
+    type="continuous">
+    <origin
+      xyz="0 -0.08 0.025"
+      rpy="-1.5708 0 -3.1416" />
+    <parent
+      link="l_link2" />
+    <child
+      link="l_link3" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+    <gazebo>
+    <plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control">
+      <robotNamespace>/solidsinglearm</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
+  </gazebo>
+   <transmission name="right_tran1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="l_joint1">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="right_motor1">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="right_tran2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="l_joint2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="right_motor2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="right_tran3">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="l_joint3">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="right_motor3">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+</robot>

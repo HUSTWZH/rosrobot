@@ -1,0 +1,24 @@
+solidsinglearm: 
+  # Position Controllers ---------------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  left_group:
+    type: effort_controllers/JointGroupPositionController
+    joints:
+    - l_joint1
+    - l_joint2
+    - l_joint3
+    l_joint1/pid: {p: 10000,  d: 100, i: 220, i_clamp: 0}
+    l_joint2/pid: {p: 10000,  d: 100, i: 220, i_clamp: 0}
+    l_joint3/pid: {p: 10000,  d: 100, i: 220, i_clamp: 0}
+    # constraints:
+    #   goal_time: 0.5                   # Override default
+    #   stopped_velocity_tolerance: 0.02 # Override default
+    # gains: # Required because we're controlling a velocity interface
+
+
+  # state_publish_rate:  25            # Override default
+  # action_monitor_rate: 30            # Override default
+  # stop_trajectory_duration: 0        # Override default

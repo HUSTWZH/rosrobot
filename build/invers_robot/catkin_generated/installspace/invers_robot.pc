@@ -1,0 +1,8 @@
+prefix=/media/dubing/DATA/test/install
+
+Name: invers_robot
+Description: Description of invers_robot
+Version: 0.3.0
+Cflags: 
+Libs: -L/media/dubing/DATA/test/install/lib 
+Requires: 

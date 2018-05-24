@@ -1,0 +1,8 @@
+prefix=/media/dubing/DATA/test/install
+
+Name: hustarm1640
+Description: Description of hustarm1640
+Version: 1.0.0
+Cflags: 
+Libs: -L/media/dubing/DATA/test/install/lib 
+Requires: 

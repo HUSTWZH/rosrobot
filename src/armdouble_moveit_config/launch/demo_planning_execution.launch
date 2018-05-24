@@ -1,0 +1,27 @@
+<launch>
+  
+  <include file="$(find armdouble_moveit_config)/launch/planning_context.launch">
+    <arg name="load_robot_description" value="true"/>
+  </include>
+
+  <!-- When you run a move group node, you may need to remap the topic /joint_states to /robot/joint_states, otherwise MoveIt! won’t have feedback from the joints.  -->
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <param name="/use_gui" value="false"/>
+    <rosparam param="/source_list">[/armdouble/joint_states]</rosparam>
+  </node>
+
+    <!-- convert joint states to TF transforms for rviz, etc -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+	respawn="false" output="screen">
+    <remap from="/joint_states" to="/armdouble/joint_states" />
+  </node>
+
+  <include file="$(find armdouble_moveit_config)/launch/move_group.launch">
+    <arg name="publish_monitored_planning_scene" value="true"/>
+  </include>
+
+  <include file="$(find armdouble_moveit_config)/launch/moveit_rviz.launch">
+    <arg name="config" value="true"/>
+  </include>
+
+</launch>
